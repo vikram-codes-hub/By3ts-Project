@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Translator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h3>SPIKO Video Translator</h3>
+    <div class="container">
+        <label for="language">Select Language:</label>
+        <select id="language">
+            <option value="hindi">Hindi</option>
+            <option value="english">English</option>
+            <option value="french">French</option>
+        </select>
+        <button id="startTranslation">Start Translation</button>
+
+        <!-- Loading Indicator -->
+        <div id="loading" style="display: none;">
+            <div class="spinner"></div>
+            <div>Translating... Please wait.</div>
+        </div>
+
+        <!-- Translated Audio Player -->
+        <div id="audioPlayerContainer" style="display: none;">
+            <h4>Translated Audio</h4>
+            <audio id="translatedAudio" controls></audio>
+        </div>
+
+        <!-- Subtitle Container -->
+        <div id="subtitleContainer" style="display: none;">
+            <h4>Subtitles</h4>
+            <div id="subtitleText"></div>
+        </div>
+    </div>
+    <script src="popup.js"></script>
+</body>
+</html>

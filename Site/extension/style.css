@@ -1,0 +1,88 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    padding: 10px;
+    width: 300px;
+    background-color: #0a0a1a; /* Dark navy background */
+    color: #ffffff; /* White text */
+    margin: 0;
+}
+
+h3 {
+    margin-bottom: 10px;
+    color: #ffffff; /* White text */
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Language Selector */
+select {
+    padding: 8px;
+    font-size: 14px;
+    border-radius: 4px;
+    border: none; /* Remove border */
+    background-color: #201636; /* Dark purple background */
+    color: #ffffff; /* White text */
+}
+
+/* Buttons */
+button {
+    padding: 10px;
+    font-size: 14px;
+    cursor: pointer;
+    background-color: #201636; /* Dark purple background */
+    color: #ffffff; /* White text */
+    border: none; /* Remove border */
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #2c1a4a; /* Slightly lighter purple on hover */
+}
+
+/* Translated Audio Player */
+#audioPlayerContainer {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #201636; /* Dark purple background */
+    border-radius: 4px;
+    border: 1px solid #4CAF50; /* Green border */
+}
+
+#audioPlayerContainer h4 {
+    margin-bottom: 10px;
+    color: #4CAF50; /* Green heading */
+}
+
+audio {
+    width: 100%;
+    margin: 0 auto;
+    display: block;
+}
+
+/* Subtitle Container */
+#subtitleContainer {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #201636; /* Dark purple background */
+    border-radius: 4px;
+    border: 1px solid #4CAF50; /* Green border */
+    display: none; /* Hidden by default */
+}
+
+#subtitleContainer h4 {
+    margin-bottom: 10px;
+    color: #4CAF50; /* Green heading */
+}
+
+#subtitleText {
+    font-size: 14px;
+    color: #ffffff; /* White text */
+    text-align: center;
+}

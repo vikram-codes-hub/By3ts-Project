@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Video Translator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1 class="heading">SPIKO</h1>
+    </header>
+    
+    <div class="container">
+        <!-- Video Upload Section -->
+        <div class="upload-section">
+            <label for="videoInput" class="upload-label">Choose Video</label>
+            <input type="file" id="videoInput" accept="video/*">
+            <button id="uploadVideo">Upload Video</button>
+        </div>
+        
+        <!-- Video Player Section -->
+        <div class="video-section">
+            <video id="videoPlayer" controls></video>
+        </div>
+        
+        <!-- Status Section -->
+        <div class="status-section">
+            <div id="loading" style="display: none;">
+                <div class="spinner"></div>
+                <div>Translating... Please wait.</div>
+            </div>
+            <div id="translationStatus"></div>
+        </div>
+
+        <!-- Translated Audio Player -->
+        <div id="audioPlayerContainer" style="display: none;">
+            <h3>Translated Audio</h3>
+            <audio id="translatedAudio" controls></audio>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

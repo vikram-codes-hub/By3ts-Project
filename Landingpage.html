@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spiko - AI-Powered Real-Time Translation</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <style>
+        :root {
+            --neon-purple: rgba(138, 43, 226, 0.8);
+            --deep-space: #0a0a1a;
+        }
+
+        body {
+            background: var(--deep-space);
+            color: white;
+            overflow-x: hidden;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .holographic-card {
+            background: linear-gradient(145deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.03) 100%);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .holographic-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, var(--neon-purple), transparent);
+            transform: rotate(45deg);
+            opacity: 0.15;
+            pointer-events: none;
+        }
+
+        .holographic-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 16px 40px rgba(138, 43, 226, 0.2);
+        }
+
+        .quantum-text {
+            background: linear-gradient(45deg, #8a2be2, #ff6bff);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 0 25px rgba(138, 43, 226, 0.4);
+        }
+
+        #particles-js {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+        }
+
+        .cyber-glow {
+            box-shadow: 0 0 30px rgba(138, 43, 226, 0.4);
+            transition: box-shadow 0.3s ease;
+        }
+
+        .cyber-glow:hover {
+            box-shadow: 0 0 50px rgba(138, 43, 226, 0.6);
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-12px);
+            }
+        }
+
+        .floating {
+            animation: float 4s ease-in-out infinite;
+        }
+
+        .neon-pulse {
+            animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0.5;
+            }
+        }
+
+        .scrolling-text {
+            background: black;
+            color: white;
+            padding: 10px 0;
+            overflow: hidden;
+            white-space: nowrap;
+            position: relative;
+        }
+
+        .scrolling-text span {
+            display: inline-block;
+            padding-left: 100%;
+            animation: scroll 20s linear infinite;
+        }
+
+        @keyframes scroll {
+            0% {
+                transform: translateX(100%);
+            }
+
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+
+        /* Toast Notification */
+        .toast {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: rgba(138, 43, 226, 0.9);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 8px;
+            z-index: 1000;
+            display: none;
+        }
+    </style>
+</head>
+
+<body class="relative">
+    <!-- Scrolling Text at Top Border -->
+    <div class="scrolling-text">
+        <span>🚀 Spiko is now available !!!! Download the Chrome extension for real-time translation. !!!! wide support
+            on every platform 🚀</span>
+    </div>
+
+    <!-- Header -->
+    <header class="relative pt-24 pb-32 overflow-hidden">
+        <div id="particles-js"></div>
+        <div class="container mx-auto text-center px-4">
+            <div class="floating">
+                <h1 class="text-7xl font-black quantum-text mb-6">SPIKO.</h1>
+                <p class="text-xl opacity-90 mb-8">Next-Gen Learning Enhancement Suite</p>
+                <div class="inline-block neon-pulse">
+                    <div class="h-1 w-24 bg-purple-500 mx-auto rounded-full"></div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main  -->
+    <main class="relative z-10 container mx-auto px-4 pb-24">
+        <!-- Features Section -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            <!-- Feature Card 1 -->
+            <div class="holographic-card p-8">
+                <div class="text-purple-400 text-4xl mb-6">
+                    <i class="fas fa-language"></i>
+                </div>
+                <h3 class="text-2xl font-bold mb-4">Real-time Translation</h3>
+                <p class="opacity-80">Translate course videos in real-time with support for multiple languages.</p>
+            </div>
+
+            <!-- Feature Card 2 -->
+            <div class="holographic-card p-8">
+                <div class="text-purple-400 text-4xl mb-6">
+                    <i class="fas fa-closed-captioning"></i>
+                </div>
+                <h3 class="text-2xl font-bold mb-4">Live Subtitles</h3>
+                <p class="opacity-80">Enable live subtitles with customizable settings for better understanding.</p>
+            </div>
+
+            <!-- Feature Card 3 -->
+            <div class="holographic-card p-8">
+                <div class="text-purple-400 text-4xl mb-6">
+                    <i class="fas fa-volume-up"></i>
+                </div>
+                <h3 class="text-2xl font-bold mb-4">Multiple Language</h3>
+                <p class="opacity-80">Select between multiple languages for a diverse learning experience.</p>
+            </div>
+
+            <!-- Feature Card 4 -->
+            <div class="holographic-card p-8">
+                <div class="text-purple-400 text-4xl mb-6">
+                    <i class="fas fa-palette"></i>
+                </div>
+                <h3 class="text-2xl font-bold mb-4">Save Audio Filese</h3>
+                <p class="opacity-80">Save the translated audio files for offline listening and reference.</p>
+            </div>
+
+            <!-- Feature Card 5 -->
+            <div class="holographic-card p-8">
+                <div class="text-purple-400 text-4xl mb-6">
+                    <i class="fas fa-globe"></i>
+                </div>
+                <h3 class="text-2xl font-bold mb-4">Auto-detect Language</h3>
+                <p class="opacity-80">Automatically detect the course language for seamless translation.</p>
+            </div>
+
+            <!-- Feature Card 6 -->
+            <div class="holographic-card p-8">
+                <div class="text-purple-400 text-4xl mb-6">
+                    <i class="fas fa-cog"></i>
+                </div>
+                <h3 class="text-2xl font-bold mb-4">Customizable Settings</h3>
+                <p class="opacity-80">Personalize the extension with AI voice settings and preferences.</p>
+            </div>
+        </div>
+
+        <!-- Statistics Section -->
+        <h3 class="text-2xl font-bold mb-6 text-center mt-12">Why Choose Spiko?</h3>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            <!-- Statistics Card 1 -->
+            <div class="holographic-card p-8">
+                <div class="text-purple-400 text-4xl mb-6">
+                    <i class="fas fa-users"></i>
+                </div>
+                <h4 class="text-xl font-bold mb-2">000+ Users</h4>
+                <p class="opacity-80">Join a growing community of learners.</p>
+            </div>
+
+            <!-- Statistics Card 2 -->
+            <div class="holographic-card p-8">
+                <div class="text-purple-400 text-4xl mb-6">
+                    <i class="fas fa-globe-asia"></i>
+                </div>
+                <h4 class="text-xl font-bold mb-2">10+ Languages</h4>
+                <p class="opacity-80">Supports a wide range of languages.</p>
+            </div>
+
+            <!-- Statistics Card 3 -->
+            <div class="holographic-card p-8">
+                <div class="text-purple-400 text-4xl mb-6">
+                    <i class="fas fa-rocket"></i>
+                </div>
+                <h4 class="text-xl font-bold mb-2">Real Time Translation</h4>
+                <p class="opacity-80">Real-time translation with no delays.</p>
+            </div>
+        </div>
+
+        <!-- Pricing Section -->
+        <h3 class="text-2xl font-bold mb-6 text-center mt-12">Pricing</h3>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            <!-- Pricing Card 1 -->
+            <div class="holographic-card p-8">
+                <h4 class="text-xl font-bold mb-4">Free</h4>
+                <p class="opacity-80">Basic features for free</p>
+                <p class="text-2xl font-bold mt-4">₹0</p>
+                <button id="free-plan"
+                    class="bg-purple-600 text-white py-2 px-4 rounded-lg mt-4 hover:bg-purple-700">Get Started</button>
+            </div>
+
+            <!-- Pricing Card 2 -->
+            <div class="holographic-card p-8">
+                <h4 class="text-xl font-bold mb-4">Pro</h4>
+                <p class="opacity-80">Advanced features and support</p>
+                <p class="text-2xl font-bold mt-4">₹499/month</p>
+                <button id="pro-plan" class="bg-purple-600 text-white py-2 px-4 rounded-lg mt-4 hover:bg-purple-700">Get
+                    Started</button>
+            </div>
+
+            <!-- Pricing Card 3 -->
+            <div class="holographic-card p-8">
+                <h4 class="text-xl font-bold mb-4">Enterprise</h4>
+                <p class="opacity-80">Custom solutions for teams</p>
+                <p class="text-2xl font-bold mt-4">Contact Us</p>
+                <button id="enterprise-plan"
+                    class="bg-purple-600 text-white py-2 px-4 rounded-lg mt-4 hover:bg-purple-700">Contact us</button>
+            </div>
+        </div>
+
+    <!-- Download Button -->
+    <div class="mt-20 text-center">
+        <div class="inline-block transform hover:scale-105 transition-all">
+            <a href="https://drive.google.com/uc?export=download&id=1woUY_wUrpVlco28TdOnQfW4ryis0awl9" download
+                id="download-btn"
+                class="bg-gradient-to-r from-purple-600 to-pink-500 text-white px-12 py-4 rounded-full text-lg font-semibold cyber-glow">
+                <i class="fas fa-download mr-2"></i> Download Spiko
+            </a>
+            <div class="mt-4 text-sm opacity-70">Version 2025.0.01 | Chrome Extension</div>
+            <div class="Another-page" style="margin-top: 20px;">
+                <a href="http://127.0.0.1:3000/Site/index.html" target="_blank" style="padding: 10px 20px; background: blue; color: white; text-decoration: none; border-radius: 5px;">Click Here</a>
+            </div>        </div>
+    </div>
+
+    </main>
+
+    <!--  Footer -->
+    <footer class="relative border-t border-white/10 pt-12 pb-8">
+        <div class="container mx-auto px-4 text-center">
+            <div class="flex justify-center space-x-6 mb-6">
+                <a href="#" class="text-purple-300 hover:text-white transition">
+                    <i class="fab fa-github text-2xl"></i>
+                </a>
+                <a href="#" class="text-purple-300 hover:text-white transition">
+                    <i class="fab fa-discord text-2xl"></i>
+                </a>
+                <a href="#" class="text-purple-300 hover:text-white transition">
+                    <i class="fab fa-twitter text-2xl"></i>
+                </a>
+            </div>
+            <p class="text-sm opacity-70">&copy; 2027 Spiko Technologies. Elevating human understanding.</p>
+            <p class="text-sm opacity-70 mt-2">Built with ❤️ by <span class="text-purple-300">By3ts</span></p>
+        </div>
+    </footer>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="toast">Action completed successfully!</div>
+
+   
+    <div id="modal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden">
+        <div class="bg-white text-black p-8 rounded-lg max-w-md">
+            <h3 class="text-xl font-bold mb-4">Contact Us</h3>
+            <form id="contact-form">
+                <input type="text" id="name" placeholder="Your Name" class="w-full p-2 mb-4 border rounded">
+                <input type="email" id="email" placeholder="Your Email" class="w-full p-2 mb-4 border rounded">
+                <textarea id="message" placeholder="Your Message" class="w-full p-2 mb-4 border rounded"></textarea>
+                <button type="submit" class="bg-purple-600 text-white px-4 py-2 rounded-lg">Submit</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        
+        particlesJS('particles-js', {
+            particles: {
+                number: { value: 80, density: { enable: true, value_area: 800 } },
+                color: { value: '#8a2be2' },
+                shape: { type: 'circle' },
+                opacity: { value: 0.5, random: false },
+                size: { value: 3, random: true },
+                line_linked: {
+                    enable: true,
+                    distance: 150,
+                    color: '#8a2be2',
+                    opacity: 0.4,
+                    width: 1
+                },
+                move: {
+                    enable: true,
+                    speed: 6,
+                    direction: 'none',
+                    random: false,
+                    straight: false,
+                    out_mode: 'out',
+                    bounce: false
+                }
+            },
+            interactivity: {
+                detect_on: 'canvas',
+                events: {
+                    onhover: { enable: true, mode: 'repulse' },
+                    onclick: { enable: true, mode: 'push' },
+                    resize: true
+                }
+            },
+            retina_detect: true
+        });
+
+       
+        function showToast(message) {
+            const toast = document.getElementById('toast');
+            toast.textContent = message;
+            toast.style.display = 'block';
+            setTimeout(() => {
+                toast.style.display = 'none';
+            }, 3000);
+        }
+
+        
+        const modal = document.getElementById('modal');
+        const contactForm = document.getElementById('contact-form');
+
+        document.getElementById('enterprise-plan').addEventListener('click', () => {
+            modal.classList.remove('hidden');
+        });
+
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const name = document.getElementById('name').value;
+            const mobile = document.getElementById('mobile no').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+
+
+           
+            console.log('Form submitted:', { name, mobile, email, message });
+            modal.classList.add('hidden');
+            showToast('Your message has been sent !!!');
+        });
+
+        // Button Functionality
+        document.getElementById('free-plan').addEventListener('click', () => {
+            showToast('You selected the Free plan. Redirecting.....');
+            setTimeout(() => {
+                window.location.href = 'spiko.zip';
+            }, 2000);
+        });
+
+        document.getElementById('pro-plan').addEventListener('click', () => {
+            showToast('You selected the Pro plan. Redirecting...');
+            setTimeout(() => {
+                window.location.href = 'https://accounts.razorpay.com/auth/?redirecturl=https%3A%2F%2Feasy.razorpay.com&auth_intent=signup';
+            }, 2000);
+        });
+
+        document.getElementById('download-btn').addEventListener('click', () => {
+            showToast('Downloading Spiko...');
+        });
+    </script>
+</body>
+
+</html>

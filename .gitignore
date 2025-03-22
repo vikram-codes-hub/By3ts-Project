@@ -1,0 +1,66 @@
+# Virtual environment
+venv/
+.env/
+ENV/
+env/
+
+# Python cache files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.py.class
+
+# IDE and editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*.sublime-workspace
+*.sublime-project
+
+# Logs and databases
+*.log
+*.sqlite3
+*.db
+
+# Environment variables
+.env
+.env.local
+.env.development
+.env.production
+
+# Distribution / build files
+dist/
+build/
+*.egg-info/
+*.egg
+*.whl
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Testing and coverage
+.coverage
+htmlcov/
+.pytest_cache/
+
+# macOS files
+.DS_Store
+
+# Windows files
+Thumbs.db
+
+# Large files
+*.lib
+*.dll
+*.exe
+*.bin
+*.dat
+*.zip
+*.tar.gz
+
+# Custom files/folders to ignore
+*.tmp
+*.bak
+*.backup

@@ -1,0 +1,20 @@
+{
+    "manifest_version": 3,
+    "name": "Video Translator Extension",
+    "version": "1.0",
+    "description": "Translates video audio and plays it alongside the video.",
+    "permissions": ["activeTab", "scripting"],
+    "host_permissions": ["<all_urls>"],
+    "background": {
+      "service_worker": "background.js"
+    },
+    "action": {
+      "default_popup": "popup.html"
+    },
+    "content_scripts": [
+      {
+        "matches": ["<all_urls>"],
+        "js": ["content.js"]
+      }
+    ]
+  }
