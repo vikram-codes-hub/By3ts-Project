@@ -2,6 +2,10 @@
 
 Spiko is a **real-time video audio translation browser extension** designed to break language barriers in online learning. It captures video audio, translates it into the user's preferred language, and provides live subtitles and voice translation. Spiko enhances accessibility and engagement for global audiences, making online education more inclusive.
 
+## Live Demo
+You can watch the Live demo of the project here
+- https://drive.google.com/file/d/1xQQ1tZCNSaR09qFGO6t4cF9caQie8Z9o/view?usp=sharing
+
 ---
 
 ## Table of Contents
